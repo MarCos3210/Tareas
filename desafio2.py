@@ -1,6 +1,5 @@
 import numpy as np
 
-# Definir la matriz de coeficientes y el vector de resultados
 A = np.array([[52, 20, 25],
               [30, 50, 20],
               [18, 30, 55]])
@@ -9,12 +8,12 @@ B = np.array([4800, 5810, 5690])
 
 # Definir la función para el método de Jacobi
 def jacobi(A, B, tol=0.005, max_iterations=1000):
-    # Descomponer A en D, L y U
-    D = np.diag(np.diag(A))  # Matriz diagonal
-    L = np.tril(A, -1)       # Matriz triangular inferior estricta
-    U = np.triu(A, 1)        # Matriz triangular superior estricta
+   
+    D = np.diag(np.diag(A)) 
+    L = np.tril(A, -1)      
+    U = np.triu(A, 1)       
 
-    # Inicializar la primera aproximación (puede ser un vector de ceros)
+    # Inicializar la primera aproximación
     x = np.zeros_like(B, dtype=np.float64)
     
     # Calcular la matriz de Jacobi
